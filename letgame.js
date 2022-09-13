@@ -54,7 +54,7 @@ function whosTurnBlink(...args){
     if(args.length==0){
         console.log("인터벌 시작")
         document.getElementById("room"+(whosTurn+1)).style.backgroundColor = "#F0D8A860"
-        let i =10;
+        let i =60;
         intervalBlink = setInterval(() => {
             if(i>0){
                 document.querySelector(".timerZone").innerHTML = i+"초";
