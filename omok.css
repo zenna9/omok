@@ -1,0 +1,197 @@
+.a00{
+    display: none;
+    /* display: flex; */
+    flex-direction: row;
+    height: 100vh;
+    padding: 0 auto;
+}
+.a00 *{box-sizing: border-box;}
+.omokRow {
+    margin: 0%;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+.omokTable{
+    top: 15px;
+    left: 15px;
+    z-index: 3;
+    position: relative;
+    box-sizing: border-box;
+}
+.omok{
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 0.5em;
+    z-index: 5;
+    /* border: 2px solid salmon; */
+    object-fit: cover;
+
+}
+.omokLine{
+    background-color: #f2dfa9d3;
+    background-image: url(./omokline.png);
+    background-repeat: repeat;
+    position: relative;
+    left: 10px;
+    top: 10px;
+    z-index: 0;
+}
+.rightSide{
+    width: 400px;
+    margin-left: 20px;
+    padding: 60px 0;
+}
+.whosTurn{
+    border:#786048 2px solid;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    text-align: center;
+}
+.room0{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+.score{
+    width: 10%;
+    line-height: 150px;
+    color: #484830;
+    font-size: 3em;
+}
+.gamerInfo div:first-child{
+    font-size: 0.8em;
+    font-weight: 800;
+    width: 100%;
+    color: #786048;
+}
+.gamerInfo div:nth-child(2){
+    font-size: 2em;
+    color: #484830;
+    width: 50%;
+    margin: 5px auto;
+    background-color: #F0D8A8;
+    border-radius: 7px;
+}
+.gamerimg{
+    width: 60px;
+    height: 60px;
+    margin: auto;
+}
+.gamerimg img{
+    object-fit: contain;
+    width: 100%;
+}
+.gamerInfo{
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.gamerInfo{
+    height: 50%;
+}
+.timerZone{
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 2.5em;
+    margin:20px 0 ;
+}
+.gamerBtn{
+    height: 40px;
+    text-align: center;
+}
+.gamerBtn * {
+    height: 40px;
+    line-height: 40px;
+    background-color: #786048;
+    color: white;
+    border-radius: 3px;
+    font-size: 1.1em;
+}
+.gamerBtn i{
+    display: inline;
+}
+.dobal, .hangbok {
+    width: 25%;
+}
+.jean{
+    width: 40%;
+}
+.resultPop{
+    position: absolute;
+    width: 100vw;
+    left: 0;;
+    top: 0;
+    z-index: 50;
+    /* display: flex; */
+    display: none;
+    flex-direction: row;
+    text-align: center;
+    /* background-color: #484830; */
+}
+.blindForPan {
+    background-color: #90906046;
+}
+#po01{
+    padding: 10px;
+    background-color: #909060f3;
+    max-width: 40%;
+    width: 600px;
+    height: 500px;
+    margin: auto 0;
+}
+/* 승리자 사진과 콘페티 */
+.winnerImg{
+    height: 150px;
+    min-width: 100px;
+    padding: 0 auto;
+}
+.winnerImg * {
+    position: relative;
+    transition : all 0.35s linear ;
+}
+/* 프로필 */
+.winnerCharacterImg{
+    width: 80px;
+    height: 80px;
+    margin: 80px 10px;
+    left: 0;
+    top: -50px;
+    z-index: 60;
+}
+.ribbon{
+    width: 80%;
+    left: 0;
+    top: -250px;
+}
+
+/* 콘페티종료 */
+#po01 p{
+    font-weight: 800;
+    font-size: 2em;
+    color: #F0D8A8;
+}
+.btnResult{
+    width: 150px;
+    height: 50px;
+    border-radius: 7px;
+    background: #786048;
+    color: white;
+    font-weight: 800;
+    font-size: 1.5em;
+    margin: 10px 10px;
+}
+#po02{
+    width: 100%;
+    height: calc(100%-106px);
+}
+button:hover{
+    cursor: pointer;
+}

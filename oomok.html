@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./omikinit.css">
+    <link rel="stylesheet" href="./omok.css">
+    <style>
+       /* .resultPop * {border: 1px solid purple;box-sizing: border-box;} */
+        body{margin: 0%;padding: 0;}
+    </style>
+    <script src="https://kit.fontawesome.com/d505e57471.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- 시작할 때 화면 -->
+    <div class="init">
+        <p><strong>zenna의 오목게임에 입장하세요!</strong></p>
+        <div class="firstEntered">
+            <div><img src=""><p></p>
+            </div>
+        </div>
+        <hr/>
+        <p class="choiceYourFriend">&nbsp;오목판은 위험하니 함께할 친구를 데려가렴! &nbsp;</p>
+        <div class="choiceC">
+            <!-- <div class="c1">
+                <div id="biber" class="friend">
+                    <img src="./biber.png"/><br>
+                    biber
+                </div>
+            </div> -->
+            <div class="c1">
+                <div id="fish" class="friend">
+                    <img src="./fish.png"/><br>
+                    fish
+                </div>
+            </div>
+            <div class="c1">
+                <div id="alpaca" class="friend">
+                    <img src="./alpaca.png"/><br>
+                    alpaca
+                </div>
+            </div>
+            <div class="c1">
+                <div id="penguin" class="friend">
+                    <img src="./penguin.png"/><br>
+                    penguin
+                </div>
+            </div>
+            <div class="c1">
+                <div id="capibara" class="friend">
+                    <img src="./capibara.png"/><br>
+                    capibara
+                </div>
+            </div>
+            <div class="c1">
+                <div id="bbangduk" class="friend">
+                    <img src="./bbangduk.png"/><br>
+                    bbangduk
+                </div>
+            </div>
+        </div>
+        <div class="choiceName">
+            <p>닉네임을 입력하세요</p>
+            <input type="text" id="nickname"/>
+        </div>
+        <div class="choiceEnter">
+            <input type="button" value="입장 대기하기"/>
+        </div>
+    </div>
+    <!-- 게임화면    -->
+    <div class="a00">
+        <!-- 오목판 그림 -->
+        <div class="omokLine">
+            <!-- 오목판 -->
+            <div class="omokTable">
+                <div class="omokPan">
+                </div>
+            </div>
+        </div>
+        <!-- =============우측화면=============== -->
+        <div class="rightSide">
+            <!-- 누구차례? -->
+            <div class="whosTurn">
+                <div class="room0" id="room1">
+                    <div class="gamerimg"><img src="" id="g1img"/></div>
+                    <div class="gamerInfo">
+                        <div id="nickname1"></div>
+                        <div id="0score">0</div>
+                    </div>
+                </div>
+                <div class="score">:</div>
+                <div class="room0" id="room2">
+                    <div class="gamerimg"><img src="" id="g2img"/></div>
+                    <div class="gamerInfo">
+                        <div id="nickname2"></div>
+                        <div id="1score">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="timerZone">초읽기 시작</div>
+            <div class="gamerBtn">
+                <button onclick="merong()" class="dobal"><i class="fa-regular fa-face-grin-tongue-wink"></i>&nbsp;도발</button>
+                <button onclick='bothwin(whosTurn)' class="jean"><i class="fa-regular fa-handshake"></i>&nbsp;무승부 제안</button>
+                <button onclick='hangbok()' class="hangbok"><i class="fa-regular fa-flag"></i>&nbsp;항복</button>
+            </div>
+        </div>
+    </div>
+    <!-- 결과창!!! ================================-->
+    <div class="resultPop">
+        <div class="blindForPan"></div>
+        <div class="po01" id="po01">
+            <div class="winnerImg">
+                <img class="winnerCharacterImg" src="./alpaca.png"/>
+                <img src="./ribbon.png" class="ribbon"/>
+            </div>
+            <p><m class="whosWin"></m>님의 승리입니다</p>
+            <div>
+                <button id="btnAgain" class="btnResult" onclick='gameAgain()'>다시하기</button>
+                <button id="btnOut" class="btnResult">그만하기</button>
+            </div>
+        </div>
+    </div>
+    <!-- 버튼클릭 (=돌 놓기) 시 행과 열 코드와 q,k여부가 전달 -->
+    <!-- 각 위치별로 q,k여부에 따라 돌이 놓인 이미지 반영 -->
+</body>
+<script>
+    // ======================================================================
+    // 오목판 
+    const pan = [];
+    const xnum = 15;
+    const ynum = 15;
+    const omokPan = document.querySelector(".omokPan")
+    const resultPop = document.querySelector(".resultPop");
+    const resultRightSide = resultPop.querySelector(".po01");
+    const blindForPan = document.querySelector(".blindForPan");
+    const omokLine = document.querySelector(".omokLine");
+    const btnEnter = document.querySelector(".choiceEnter");
+    let friend = document.querySelectorAll(".friend");
+    // 흑돌백돌?
+    let whosTurn = 0;
+    let gamer = [];
+    let dollcolor=["black","white"];
+    
+</script>
+<script src="./intro.js"></script> 
+<script src="./letgame.js"></script>
+</html>
