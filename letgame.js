@@ -49,17 +49,20 @@ function init(){
     }
 }
 
+let irr =60;
 //순서인 사용자 표시하기
 function whosTurnBlink(...args){
+    console.log(args.length+" : 길이")
     if(args.length==0){
         console.log("인터벌 시작")
         document.getElementById("room"+(whosTurn+1)).style.backgroundColor = "#F0D8A860"
-        let i =60;
+        irr=60;
+        console.log(irr)
         intervalBlink = setInterval(() => {
-            if(i>0){
-                document.querySelector(".timerZone").innerHTML = i+"초";
-                i--;
-            }else if(i==0){
+            if(irr>0){
+                document.querySelector(".timerZone").innerHTML = irr+"초";
+                irr--;
+            }else if(irr==0){
                 changeTurn();
                 flag=false;
             }
@@ -97,9 +100,10 @@ function setDoll(evt){
     pan[dollx][dolly] = gamer[whosTurn].key;
     // console.log("배열값 : "+pan[dollx][dolly])
     doll.removeEventListener("click",setDoll);
-    isWin(dollx, dolly);
-    console.log("setDoll()")
-    changeTurn();
+    if(!isWin(dollx, dolly)){
+        console.log("setDoll()")
+        changeTurn();
+    };
 }
 
 
@@ -110,26 +114,27 @@ function isWin(idx,idy){
         coloredDoll(idx,idy,-1,-1);
         coloredDoll(idx,idy,1,1);
         yourWin(whosTurn);
-        return;
+        return true;
         // 우하향 성공 체크
     }else if((gocheck(idx,idy,-1,1)+gocheck(idx,idy,1,-1))>=4){
         coloredDoll(idx,idy,-1,1);
         coloredDoll(idx,idy,1,-1);
         yourWin(whosTurn);
-        return;
+        return true;
         // 세로 성공 체크
     }else if((gocheck(idx,idy,0,1)+gocheck(idx,idy,0,-1))>=4){
         coloredDoll(idx,idy,0,1);
         coloredDoll(idx,idy,0,-1);
         yourWin(whosTurn);
-        return;
+        return true;
         // 가로 성공 체크
     }else if((gocheck(idx,idy,1,0)+gocheck(idx,idy,-1,0))>=4){
         coloredDoll(idx,idy,1,0);
         coloredDoll(idx,idy,-1,0);
         yourWin(whosTurn);
-        return;
+        return true;
     }
+    return false;
 }
 function gocheck(x,y,xi,yi){
     let count = 0;
