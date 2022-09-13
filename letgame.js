@@ -19,6 +19,7 @@ function fKeyUp(e){
 
 function init(){
     document.querySelector(".omokPan").innerHTML="";
+    pan =[];
     for (let i =0;i<xnum;i++){
         pan.push([]);
         let omokRow = document.createElement('div');
@@ -184,6 +185,9 @@ function yourWin(winner){
     resultPop.querySelector(".winnerCharacterImg").src = "./"+gamer[winner].charater+".png"
     resultPop.querySelector(".whosWin").innerHTML=`<strong>${gamer[winner].nickname}<strong>`;
     console.log("winner is "+winner);
+    document.getElementById("room1").style.backgroundColor="";
+    document.getElementById("room2").style.backgroundColor=""
+
 }
 document.querySelector("#btnAgain").addEventListener("click",init);
 
