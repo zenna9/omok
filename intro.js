@@ -37,7 +37,6 @@ function selectedFriend(event){
 btnEnter.addEventListener("click",(event)=>{
     let charater ="";
     friend.forEach(item => {
-        // console.log(item)
         if(item.checked){
             charater = item.id;
         }
@@ -63,7 +62,6 @@ btnEnter.addEventListener("click",(event)=>{
         gamer.push({"key":'k',charater,nickname})
         let firstEntered = document.querySelector(".firstEntered"); 
         firstEntered.style.visibility = "visible";
-        console.log(gamer);
         firstEntered.querySelector("img").src = `./${gamer[0]["charater"]}.png`;
         firstEntered.querySelector("p").innerText = `${gamer[0]["nickname"]}님이 게임 대기중입니다`;
 

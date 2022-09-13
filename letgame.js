@@ -15,8 +15,7 @@ function fKeyUp(e){
     }
 }
 
-// 사용자 관련 구역 화면 구성
-
+// 판 초기화
 function init(){
     document.querySelector(".omokPan").innerHTML="";
     pan =[];
