@@ -187,7 +187,6 @@ function yourWin(winner){
     console.log("winner is "+winner);
     document.getElementById("room1").style.backgroundColor="";
     document.getElementById("room2").style.backgroundColor=""
-
 }
 document.querySelector("#btnAgain").addEventListener("click",init);
 
