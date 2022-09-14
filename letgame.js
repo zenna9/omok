@@ -52,12 +52,9 @@ function init(){
 let irr =60;
 //순서인 사용자 표시하기
 function whosTurnBlink(...args){
-    console.log(args.length+" : 길이")
     if(args.length==0){
-        console.log("인터벌 시작")
         document.getElementById("room"+(whosTurn+1)).style.backgroundColor = "#F0D8A860"
         irr=60;
-        console.log(irr)
         intervalBlink = setInterval(() => {
             if(irr>0){
                 document.querySelector(".timerZone").innerHTML = irr+"초";
@@ -68,25 +65,21 @@ function whosTurnBlink(...args){
             }
         }, 1000);
     }else{
-        console.log("인터벌 종료")
         clearInterval(intervalBlink);
     }
 }
 // 게임 차례를 바꾸는 function 
 function changeTurn(){
-    console.log("changeTurn()")
     whosTurnBlink(1);
     document.getElementById("room"+(whosTurn+1)).style.backgroundColor = ""
     if(whosTurn==0)whosTurn=1;
     else if(whosTurn==1)whosTurn=0;
     document.querySelector(".timerZone").innerHTML = gamer[whosTurn].nickname+" 차례";
-    console.log("changeTurn()")
     whosTurnBlink();
 }
 
 // 클릭하면 돌 놓는 function
 function setDoll(evt){
-    console.log("setDoll()")
     whosTurnBlink(1);
     const doll = evt.target;
     const dollId = doll.id+"";
@@ -101,7 +94,6 @@ function setDoll(evt){
     // console.log("배열값 : "+pan[dollx][dolly])
     doll.removeEventListener("click",setDoll);
     if(!isWin(dollx, dolly)){
-        console.log("setDoll()")
         changeTurn();
     };
 }
@@ -180,7 +172,6 @@ function coloredDoll(idx,idy,xi,yi){
 }
 // 승리한 경우 팝업을 띄움
 function yourWin(winner){
-    console.log("yourWin()")
     whosTurnBlink(1);
     let winnerScore = document.getElementById(whosTurn+"score").innerHTML*1;
     document.getElementById(whosTurn+"score").innerHTML = winnerScore+1;
@@ -188,14 +179,12 @@ function yourWin(winner){
     resultPop.style.display="flex";
     resultPop.querySelector(".winnerCharacterImg").src = "./"+gamer[winner].charater+".png"
     resultPop.querySelector(".whosWin").innerHTML=`<strong>${gamer[winner].nickname}<strong>`;
-    console.log("winner is "+winner);
     document.getElementById("room1").style.backgroundColor="";
     document.getElementById("room2").style.backgroundColor=""
 }
 document.querySelector("#btnAgain").addEventListener("click",init);
 
 function bothwin(whosTurn){
-    console.log("bothWin()")
     whosTurnBlink(1);
     init();
 }
@@ -210,7 +199,6 @@ function hangbok(){
     }
 }
 function gameAgain(){
-    console.log("누구방이 늘어나냐 : "+whosTurn)
     init();
     whosTurn = (Math.floor(Math.random()*50))%2;
     resultPop.style.display = "none";
